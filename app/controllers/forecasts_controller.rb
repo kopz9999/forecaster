@@ -3,7 +3,7 @@ class ForecastsController < ApplicationController
 
   # GET /forecasts or /forecasts.json
   def index
-    @forecasts = Forecast.all
+    @forecasts = Forecast.all.order(created_at: :desc)
   end
 
   # GET /forecasts/1 or /forecasts/1.json
@@ -24,7 +24,9 @@ class ForecastsController < ApplicationController
     @forecast = Forecast.new(forecast_params)
 
     respond_to do |format|
-      if @forecast.save
+      if @forecast.valid?
+        @forecast.request_date = Time.now.to_formatted_s(:long)
+        @forecast.save
         format.html { redirect_to forecast_url(@forecast), notice: "Forecast was successfully created." }
         format.json { render :show, status: :created, location: @forecast }
       else
