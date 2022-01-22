@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  street: MyString
+  street2: MyString
+  city: MyString
+  state: MyString
+  postal_code: MyString
+  request_date: MyString
+  temperature: 9.99
+
+two:
+  street: MyString
+  street2: MyString
+  city: MyString
+  state: MyString
+  postal_code: MyString
+  request_date: MyString
+  temperature: 9.99

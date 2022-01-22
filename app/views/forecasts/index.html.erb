@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Forecasts</h1>
+
+<div id="forecasts">
+  <table>
+    <thead>
+        <tr>
+          <th> Street </th>
+          <th> Street 2 </th>
+          <th> City </th>
+          <th> State </th>
+          <th> Postal code </th>
+          <th> Request date </th>
+          <th> Temperature </th>
+          <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @forecasts.each do |forecast| %>
+            <tr>
+              <td> <%= forecast.street %> </td>
+              <td> <%= forecast.street2 %> </td>
+              <td> <%= forecast.city %> </td>
+              <td> <%= forecast.state %> </td>
+              <td> <%= forecast.postal_code %> </td>
+              <td> <%= forecast.request_date %> </td>
+              <td> <%= forecast.temperature %> </td>
+              <td> <%= link_to "Show this forecast", forecast %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New forecast", new_forecast_path %>
