@@ -1,6 +1,3 @@
-require 'uri'
-require 'net/http'
-
 class WeatherService
   SERVICE_URL = 'http://api.weatherapi.com/v1/current.json'
   include Singleton
@@ -14,6 +11,7 @@ class WeatherService
   private
 
   def do_call(postal_code)
+    puts "Calling Weather Service for location: #{postal_code}"
     uri = URI("#{SERVICE_URL}?key=#{ENV['WEATHER_API_KEY']}&q=#{postal_code}&aqi=no")
     res = Net::HTTP.get_response(uri)
     if res.is_a?(Net::HTTPSuccess)
