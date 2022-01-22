@@ -1,24 +1,37 @@
-# README
+# Forecaster
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample rails app for forecasting weather
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Requirements
+- RVM
+- ruby 2.7.1
+- rails
+- bundler
 
-* System dependencies
+Clone this repo and run
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+Install database
 
-* Database initialization
+```
+rails db:migrate
+```
 
-* How to run the test suite
+Get an API token from [Weather API](https://www.weatherapi.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
+Export the token as
 
-* Deployment instructions
+```
+export WEATHER_API_KEY=xxxx
+```
 
-* ...
+Start the app
+
+```
+rails start
+```
