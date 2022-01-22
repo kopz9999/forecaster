@@ -26,6 +26,7 @@ class ForecastsController < ApplicationController
     respond_to do |format|
       if @forecast.valid?
         @forecast.request_date = Time.now.to_formatted_s(:long)
+        @forecast.temperature = WeatherService.call(@forecast.postal_code)
         @forecast.save
         format.html { redirect_to forecast_url(@forecast), notice: "Forecast was successfully created." }
         format.json { render :show, status: :created, location: @forecast }
