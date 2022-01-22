@@ -30,6 +30,11 @@ Export the token as
 export WEATHER_API_KEY=xxxx
 ```
 
+> For running cache on dev use
+```
+rails dev:cache
+```
+
 Start the app
 
 ```
